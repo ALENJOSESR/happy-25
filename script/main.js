@@ -301,6 +301,11 @@ const animationTimeline = () => {
     tl.restart();
   });
 };
-
+window.addEventListener("DOMContentLoaded", event => {
+    const audio = document.querySelector("audio");
+    audio.volume = 0.2;
+    audio.autoplay= true;
+    audio.play();
+});
 // Run fetch and animation in sequence
 fetchData();
