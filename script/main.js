@@ -1,4 +1,14 @@
 // Import the data to customize and insert them into page
+window.addEventListener("DOMContentLoaded", event => {
+    const audio = document.querySelector("audio");
+    audio.load();
+    audio.volume = 0.7;
+    audio.autoplay= true;
+    audio.currentTime = 0;
+    audio.load();
+    audio.play();
+});
+
 const fetchData = () => {
   fetch("customize.json")
     .then(data => data.json())
@@ -301,11 +311,6 @@ const animationTimeline = () => {
     tl.restart();
   });
 };
-window.addEventListener("DOMContentLoaded", event => {
-    const audio = document.querySelector("audio");
-    audio.volume = 0.2;
-    audio.autoplay= true;
-    audio.play();
-});
+
 // Run fetch and animation in sequence
 fetchData();
